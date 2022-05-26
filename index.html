@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Now</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
+
+
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .htxt {
+            text-align: center;
+            margin-top: 0px;
+            padding: 10px;
+            background-color: lightskyblue;
+            cursor: pointer;
+        }
+        
+        .htxt>h1 {
+            border: 2px ridge greenyellow;
+            border-radius: 10px;
+            padding: 10px;
+            color: rgb(56, 90, 12);
+            width: fit-content;
+            margin: auto;
+        }
+        
+        .bslink {
+            border: 3px solid transparent;
+            padding: 10px;
+        }
+        
+        .bslink:hover {
+            border: 3px solid lightblue;
+            border-radius: 10px;
+        }
+        
+        .nav-item {
+            border: 3px solid transparent;
+        }
+        
+        .nav-item:hover {
+            border: 3px solid lightblue;
+            border-radius: 10px;
+        }
+        
+        .activenavitem {
+            color: orange;
+            font-weight: 600;
+        }
+        
+        .bi-person-circle {
+            font-size: 2em;
+            color: rgb(16, 160, 255);
+            margin-right: 25px;
+            cursor: pointer;
+        }
+        
+        .login1 {
+            display: none;
+        }
+        
+        .login2 {
+            display: block;
+        }
+        
+        .login2:hover {
+            color: rgb(111, 199, 23);
+        }
+        
+        #search1 {
+            display: block;
+        }
+        
+        #search2 {
+            display: none;
+        }
+        
+        .headimage {
+            height: 500px;
+        }
+        
+        #searchinput {
+            width: 20vw;
+        }
+        
+        .bshead {
+            text-align: center;
+            width: fit-content;
+            margin: 25px auto 50px;
+            border-bottom: 3px solid green;
+            color: chocolate;
+        }
+        
+        .iconsize {
+            font-size: 20px;
+        }
+        
+        .card {
+            margin-top: 15px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .card>img {
+            height: 300px;
+            width: 100%;
+        }
+        
+        .card-text {
+            height: 100px;
+            overflow: hidden;
+        }
+        
+        footer {
+            height: 200px;
+        }
+        
+        @media screen and (max-width:992px) {
+            .login1 {
+                display: block;
+            }
+            .login2 {
+                display: none;
+            }
+            .login1:hover {
+                color: rgb(111, 199, 23);
+            }
+            #search1 {
+                display: none;
+            }
+            #search2 {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .headimage {
+                height: 400px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- for website heading *1-->
+    <header>
+        <div class="htxt">
+            <h1 class="shadow">Books Now</h1>
+        </div>
+    </header>
+    <!-- *1-->
+
+    <!-- for navigation *2-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand bslink" href="buysell.html"><i class="bi bi-bag"></i>Buy/Sell</a>
+            <i class="bi bi-person-circle login1" title="Login"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <span class="activenavitem"><i class="bi bi-house iconsize"></i>Home</a></span>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="#"><i class="bi bi-journal-richtext iconsize"></i>Books</a>
+                    </li>
+
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right iconsize"></i>Login</a>
+                    </li>
+                </ul>
+                <i class="bi bi-person-circle login2" title="Login"></i>
+                <div id="search1">
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="searchinput" type="search" placeholder="Search Book" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="search2">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search Book" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- *2-->
+
+    <section>
+        <!-- for books slideshow *3-->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="https://images.unsplash.com/photo-1602722053020-af31042989d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 headimage" alt="book img">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 headimage" alt="book img">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" class="d-block w-100 headimage" alt="book img">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 headimage" alt="book img">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80" class="d-block w-100 headimage" alt="book img">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- *3-->
+        <h2 class="bshead">Buy & Sell books</h2>
+
+        <div class="container">
+            <div class="row row-cols-auto">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/5179mrE+WWL._SY344_BO1,204,203,200_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Elon Musk</h5>
+                            <p class="card-text">South African born Elon Musk is the renowned entrepreneur and innovator behind PayPal, SpaceX, Tesla, and SolarCity. Musk wants to save our planet; he wants to send citizens into space, to form a colony on Mars; he wants to
+                                make money while doing these things; and he wants us all to know about it. He is the real-life inspiration for the Iron Man series of films starring Robert Downey Junior.
+                            </p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/511FSHKuqmL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Relativity</h5>
+                            <p class="card-text">Albert Einstein is the unquestioned founder of modern physics. His theory of relativity is the most important scientific idea of the modern era. In this book Einstein explains, using the minimum of mathematical terms, the basic
+                                ideas and principles of the theory</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/614MdQJmr4L._SX198_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Indian Railway</h5>
+                            <p class="card-text">The railways did more than link India – its metamorphosis into a network brought the nation together. This sumptuously illustrated reference book traces the history of the railways in India from the early plans of the 1830s,</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/41f4eUTfRTL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Democratic Politics</h5>
+                            <p class="card-text">This ‘Democratic Politics – II’ will give the students of Class 10 a better understanding of the consequences of the ‘Democracy’ and the challenges faced during that period. It will also help the students to enrich their knowledge
+                                about the popular Moments and the Political Parties. Published by National Council of Education Research and Training (NCERT), this book is written in lucid language to keep it simple and easy.
+                            </p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/41r6F2LRf8L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Psychology of Money</h5>
+                            <p class="card-text">Timeless lessons on wealth, greed, and happiness doing well with money isn?t necessarily about what you know. It?s about how you behave. And behavior is hard to teach, even to really smart people. How to manage money, invest
+                                it, and make business decisions
+                            </p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51wbVQTpTgL._SX339_BO1,204,203,200_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Wings of Fire</h5>
+                            <p class="card-text"> The 'Wings of Fire' is one such autobiography by visionary scientist Dr. APJ Abdul Kalam, who from very humble beginnings rose to be the President of India. The book is full of insights, personal moments and life experiences
+                                of Dr. Kalam. It gives us an understanding on his journey of success.</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/41lD6csIPWS._SX198_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">The Origin of Species </h5>
+                            <p class="card-text">The theory of natural selection constructed by Charles Darwin is comprised in his revolutionary work of scientific literature called the Origin of Species. This piece of work recounts his ideas on the process of evolution of
+                                living beings based on the process of</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/51GtTMTpNmL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Against the Gods</h5>
+                            <p class="card-text">"Ambitious and readable . . . an engaging introduction to the oddsmakers, whom Bernstein regards as true humanists helping to release mankind from the choke holds of superstition and fatalism."
+                            </p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <hr>
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
